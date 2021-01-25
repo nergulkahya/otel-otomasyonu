@@ -1,0 +1,35 @@
+﻿@model List<Hotel_Otomation.Models.Rooms>
+@{
+    ViewBag.Title = "Rooms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div id="colorlib-rooms" class="colorlib-light-grey">
+        <div class="container">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-4 room-wrap animate-box">
+                        <a href="@item.ImageUrl" class="room image-popup-link" style="background-image: url(@item.ImageUrlt);"></a>
+                        <div class="desc text-center">
+                            <span class="rate-star"><i class="icon-star-full full"></i><i class="icon-star-full full"></i><i class="icon-star-full full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span>
+                            <h3><a href="rooms-suites.html">@item.Name</a></h3>
+                            <p class="price">
+                                <span class="currency">$</span>
+                                <span class="price-room">@item.Price</span>
+                                <span class="per">/ Gecelik</span>
+                            </p>
+                            <ul>
+                                <li><i class="icon-check"></i>Sadece 10 oda mevcut</li>
+                                <li><i class="icon-check"></i> Kahvaltı dahil</li>
+                                <li><i class="icon-check"></i> Fiyatlara KDV ve hizmet bedeli dahil değildir</li>
+                            </ul>
+                            <p></p>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+

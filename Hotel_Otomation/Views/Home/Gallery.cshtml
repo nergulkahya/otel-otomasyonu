@@ -1,0 +1,20 @@
+﻿@model List<Hotel_Otomation.Models.Galleries>
+@{
+    ViewBag.Title = "Gallery";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div id="colorlib-rooms" class="colorlib-light-grey">
+        <div class="container">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-4 room-wrap animate-box fadeInUp animated-fast">
+                        <a href="@item.ImageUrl" class="room image-popup-link" style="background-image: url(@item.ImageUrl);"></a>
+                    </div>
+                }
+
+
+            </div>
+        </div>
+    </div>

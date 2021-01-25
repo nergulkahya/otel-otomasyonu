@@ -1,0 +1,42 @@
+﻿@model List<Hotel_Otomation.Models.Abouts>
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="colorlib-about">
+    <div class="container">
+        @foreach (var item in Model)
+        {
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="about animate-box">
+                        <h2>@item.Title</h2>
+                      
+                        <p>@item.Description</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img class="img-responsive" src="@item.ImageUrl" alt="Free HTML5 Bootstrap Template by colorlib.com">
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div id="colorlib-testimony" class="colorlib-light-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box">
+                <span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span>
+               
+            </div>
+        </div>
+        <div class="row">
+            
+          
+        </div>
+    </div>
+</div>
+

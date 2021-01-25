@@ -1,0 +1,120 @@
+﻿@model List<Hotel_Otomation.Models.Rooms>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="colorlib-services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 animate-box text-center">
+                <div class="services">
+                    <span class="icon">
+                        <i class="flaticon-reception"></i>
+                    </span>
+                    <h3>7/24 Resepsiyon</h3>
+                    <p>Ayrılmışlar, büyük bir dil okyanusu olan Semanticilerin kıyısında yer alan Bookmarksgrove'da yaşıyorlar. Duden adında küçük bir nehir yerlerine ve kaynaklarına göre akar</p>
+                </div>
+            </div>
+            <div class="col-md-3 animate-box text-center">
+                <div class="services">
+                    <span class="icon">
+                        <i class="flaticon-herbs"></i>
+                    </span>
+                    <h3>Spa Süitleri</h3>
+                    <p>Ayrılmışlar, büyük bir dil okyanusu olan Semanticilerin kıyısında yer alan Bookmarksgrove'da yaşıyorlar. Duden adında küçük bir nehir yerlerine ve kaynaklarına göre akar</p>
+                </div>
+            </div>
+            <div class="col-md-3 animate-box text-center">
+                <div class="services">
+                    <span class="icon">
+                        <i class="flaticon-car"></i>
+                    </span>
+                    <h3>Transfer Hizmetleri</h3>
+                    <p>Ayrılmışlar, büyük bir dil okyanusu olan Semanticilerin kıyısında yer alan Bookmarksgrove'da yaşıyorlar. Duden adında küçük bir nehir yerlerine ve kaynaklarına göre akar</p>
+                </div>
+            </div>
+            <div class="col-md-3 animate-box text-center">
+                <div class="services">
+                    <span class="icon">
+                        <i class="flaticon-cheers"></i>
+                    </span>
+                    <h3>Restaurant ve Bar</h3>
+                    <p>Ayrılmışlar, büyük bir dil okyanusu olan Semanticilerin kıyısında yer alan Bookmarksgrove'da yaşıyorlar. Duden adında küçük bir nehir yerlerine ve kaynaklarına göre akar</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="colorlib-rooms" class="colorlib-light-grey">
+    <div class="container">
+        <!--odalar-->
+        <!--odalar-->
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box">
+                <span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span>
+                <h2>Odalar &amp; Suitler</h2>
+                <p></p>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 room-wrap animate-box">
+                    <a href="@item.ImageUrl" class="room image-popup-link" style="background-image: url(@item.ImageUrlt);"></a>
+                    <div class="desc text-center">
+                        <span class="rate-star"><i class="icon-star-full full"></i><i class="icon-star-full full"></i><i class="icon-star-full full"></i><i class="icon-star-full full"></i><i class="icon-star-full"></i></span>
+                        <h3><a href="rooms-suites.html">@item.Name</a></h3>
+                        <p class="price">
+                            <span class="currency">$</span>
+                            <span class="price-room">@item.Price</span>
+                            <span class="per">/ Gecelik</span>
+                        </p>
+                        <ul>
+                            <li><i class="icon-check"></i> Seyahat eden çiftler için mükemmel</li>
+                            <li><i class="icon-check"></i> Kahvaltı dahil</li>
+                            <li><i class="icon-check"></i> Fiyatlara KDV ve hizmet bedeli dahil değildir</li>
+                        </ul>
+                        <p><a class="btn btn-primary btn-book">Book now!</a></p>
+                    </div>
+                </div>
+            }
+        
+        </div>
+    </div>
+</div>
+
+
+
+<div id="colorlib-testimony" class="colorlib-light-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box">
+                <span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span>
+                <h2>Memnun Misafirlerimiz Diyor</h2>
+                <p>Başarılarımızı çok uzaklara, dağ kelimesinin arkasında, Vokalia ve Consonantia ülkelerinden uzakta, kör metinler yaşadığını anlatmayı seviyoruz.</p>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model.FirstOrDefault().Comments)
+            {
+                <div class="col-md-4 animate-box">
+                   <div class="testimony text-center">
+                   <span class="img-user" style="background-image:url(@item.IconUrl);"></span>
+                   <span class="user">@item.NameSurname</span>
+                   <small>Memnun Müşteri</small>
+                        <blockquote>
+                    <p>@item.Description</p>
+                        </blockquote>
+                   
+                       
+                    </div>
+                </div>
+
+            }
+            
+            
+        </div>
+    </div>
+</div>
